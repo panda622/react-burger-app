@@ -45,6 +45,10 @@ class BurgerBuilder extends Component {
     });
   };
 
+  purchaseContinue = () => {
+    alert("You will see.");
+  };
+
   addIngredientHandler = (type) => {
     const updatedIngredient = {
       ...this.state.ingredients,
@@ -90,7 +94,11 @@ class BurgerBuilder extends Component {
           closeModal={this.togglePurchasingState}
           show={this.state.purchasing}
         >
-          <OrderSummaray ingredients={this.state.ingredients} />
+          <OrderSummaray
+            closeModal={this.togglePurchasingState}
+            ingredients={this.state.ingredients}
+            purchaseContinue={this.purchaseContinue}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
