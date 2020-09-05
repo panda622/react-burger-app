@@ -9,7 +9,6 @@ const withErrorHandler = (WrappedComponent, axios) => {
     };
 
     componentDidMount() {
-      console.log("withError mounted");
       axios.interceptors.request.use(
         (request) => {
           this.setState({ error: null });
